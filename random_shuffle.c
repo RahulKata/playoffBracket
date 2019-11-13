@@ -60,13 +60,16 @@ int main()
 
 void singleElimination(int bSize)
 {
-    int i = 0, m = 0;
+    int i = 0;
+    int m = 0;
     int t = 0;
     Team *root = NULL;
+
     Team **teams = getTeams(bSize);
     printf("\n");
     organizeTeams(teams, bSize);
     root = createSEBracket(root, teams, &t, i);
+
     root = findWinner(root, m);
     printf("\n Winner of the Finals!! -->  %s\n", root->tName);
 }
